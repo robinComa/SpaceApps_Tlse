@@ -1,0 +1,19 @@
+body {
+	padding-top: 60px;
+	/* 60px to make the container go all the way to the bottom of the topbar */
+}
+
+.navbar-fixed-top {
+	position: fixed;
+	!
+	important
+}
+
+.navbar-inner {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+div#map {
+	height: 400px;
+}

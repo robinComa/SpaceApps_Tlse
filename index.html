@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html lang="en" ng-app="SkateSpots">
+<head>
+	<title>Space Apps Tlse</title>
+	    
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="libs/leaflet/leaflet.css">
+    <link rel="stylesheet" href="css/application.css">
+</head>
+
+<body ng-controller="MainCtrl">
+
+	<div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <ul class="nav">
+            <li><a href="#"><i class="icon-home"></i> {{'home' | i18n}}</a></li>
+            <li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					<i class="icon-flag"></i> {{'langage' | i18n}}<b class="caret"></b>
+				</a>
+				<ul class="dropdown-menu">
+				  <li><a href="" ng-click="i18n.changeLanguage('en')">{{'english' | i18n}}</a></li>
+				  <li><a href="" ng-click="i18n.changeLanguage('fr')">{{'french' | i18n}}</a></li>
+				</ul>
+			</li>
+          </ul>
+          <div class="nav-collapse collapse">
+            <ul class="nav pull-right">
+            	<li><a href="#"><i class="icon-lock"></i>  {{'deconnection' | i18n}}</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    
+    <div id="map"></div>
+
+	<div class="container row-fluid" ng-view></div>
+	
+	<div id="footer">
+		<div class="container">
+			<hr>
+			<p class="muted credit text-center">{{'footer' | i18n}}</p>
+		</div>
+	</div>
+	
+</body>
+
+<script type="text/javascript" charset="utf-8" src="libs/angular.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="libs/jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="libs/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="libs/angular-resource.js"></script>
+<script type="text/javascript" charset="utf-8" src="libs/cordova-2.4.0.js"></script>
+<script type="text/javascript" charset="utf-8" src="libs/leaflet/leaflet.js"></script>
+<script type="text/javascript" charset="utf-8" src="src/app.js"></script>
+<script type="text/javascript" charset="utf-8" src="src/filters.js"></script>
+<script type="text/javascript" charset="utf-8" src="src/controllers.js"></script>
+<script type="text/javascript" charset="utf-8" src="src/services.js"></script>
+<script type="text/javascript" charset="utf-8" src="src/main.js"></script>
+</html>
