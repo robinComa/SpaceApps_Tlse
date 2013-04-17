@@ -6,4 +6,12 @@ angular.module('i18nService', ['ngResource']).factory('I18n', function($resource
 
 /** Distant data Services */
 
-//TODO
+angular.module('dataService', ['ngResource']).factory('Data', function($resource){
+	return $resource('data/sample.json', {}, {
+		query: {
+			method:'GET',
+			params:{},
+			isArray:false
+		}
+	});
+});

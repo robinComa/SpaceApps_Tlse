@@ -1,4 +1,4 @@
-angular.module('SkateSpots', ['i18nService', 'i18nFilter'])
+angular.module('SpaceAppsTlse', ['i18nService', 'i18nFilter', 'dataService'])
 	.config(['$routeProvider', function($routeProvider) {
 		$routeProvider.
 			when('/', {templateUrl: 'src/templates/home.html', controller: HomeCtrl}).
