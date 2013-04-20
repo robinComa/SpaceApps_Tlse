@@ -85,7 +85,8 @@ angular.module('SpaceAppsTlse', ['i18nService', 'i18nFilter', 'typeService', 'da
 			}
 			L.polygon(latlngs, {
 				color: data.color,
-				opacity : data.opacity
+				opacity : data.opacity/4,
+				fillOpacity : data.opacity
 			}).addTo(map).on('click', data.onClick);
 		};
 		

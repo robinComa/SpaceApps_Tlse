@@ -4,5 +4,8 @@
 	"french" : "French",
 	"home" : "Home",
 	"deconnection" : "Deconnection",
-	"footer" : "The footer"
+	"footer" : "The footer",
+	"legend.timeline" : "SEARCH BY YEAR",
+	"legend.polution.type" : "SERACH BY POLLUTION TYPE",
+	"now" : "Now"
 }

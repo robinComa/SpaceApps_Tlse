@@ -1,4 +1,42 @@
-<div class="span6 offset3">
+<div class="span12">
+
+	<div class="row-fluid">
+    	<div class="span9">
+   			 <div id="map"></div>
+    	</div>
+    	<div class="span3" id="legend">
+    		<div class="row-fluid">
+    			<div class="span12 legend-header">
+	    			<div class="span4">
+						{{'legend.timeline' | i18n}}
+	    			</div>
+	    			<div class="span8">
+						{{'legend.polution.type' | i18n}}	
+	    			</div>
+    			</div>
+    			<div class="span12">
+    				<br>
+    				{{'now' | i18n}}
+    			</div>
+    			<div class="span12">
+	    			<div class="span4">
+						<input type="text" id="timeline">
+	    			</div>
+	    			<div class="span7" id="legend-type">
+	    				<ul class="unstyled">
+							<li ng-repeat="type in types">
+								<br>
+								<input type="checkbox"/>
+								<span class="legend-header">{{type.unity.name}}</span>
+								<br>
+								<img ng-src="{{type.unity.legend}}"/>
+							</li>
+						</ul>
+	    			</div>
+	    		</div>
+    		</div>
+    	</div>
+    </div>
 
 	<h1>{{theme.name}}</h1>	
 	<p>{{theme.description}}</p>

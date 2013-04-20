@@ -4,5 +4,8 @@
 	"french" : "Français",
 	"home" : "Accueil",
 	"deconnection" : "Deconnexion",
-	"footer" : "Le pied de page"
+	"footer" : "Le pied de page",
+	"legend.timeline" : "RECHERCHE PAR ANNEE",
+	"legend.polution.type" : "RECHERCHE PAR TYPE DE POLLUTION",
+	"now" : "Maintenant"
 }

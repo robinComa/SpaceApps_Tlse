@@ -16,24 +16,34 @@ body {
 }
 
 div#map {
-	height: 400px;
+	height: 500px;
 }
 
 .slider.slider-vertical {
-	height: 400px;
+	height: 360px;
+	margin: 25px;
 }
 
 .slider-handle {
-	background-color: rgb(184, 204, 42);
+	background: rgb(184, 204, 42);
 }
 
 div#legend{
 	background-color: rgb(73, 69, 65);
 	color : white;
+	height: 500px;
+	margin: 0px;
 }
 
-span.legend-header{
+.legend-header{
+	font-size: 11px;
 	height: 40px;
 	background-color: rgb(48, 45, 41);
 	padding : 5px;
+}
+
+div#legend-type{
+	height : 400px;
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
