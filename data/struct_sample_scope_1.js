@@ -1,0 +1,25 @@
+{
+	"markers":[
+	           {
+	        	   "location":{
+	        		   "lat":0,
+	        		   "lon":0
+	        	   },
+	        	   "data":100
+	           },
+	           {
+	        	   "location":{
+	        		   "lat":10,
+	        		   "lon":25.355
+	        	   },
+	        	   "data":10
+	           },
+	           {
+	        	   "location":{
+	        		   "lat":48.353,
+	        		   "lon":15.13
+	        	   },
+	        	   "data":10
+	           }
+	           ]
+}
