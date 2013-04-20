@@ -53,8 +53,15 @@ angular.module('SpaceAppsTlse', ['i18nService', 'i18nFilter', 'dataService'])
 		}).addTo(map);
 		
 		this.addMarker = function(data){
-			var marker = L.marker([data.coordinate.lat, data.coordinate.lon], {
-				opacity : data.opacity
+			var icon = L.icon({
+			    iconUrl: '/img/marker/grey.png',
+			    shadowUrl: '/img/marker/shadow.png',
+			    iconAnchor:   [2, 40],
+			    shadowAnchor:   [2, 40]
+			});
+			var marker = L.marker([data.coordinates.lat, data.coordinates.lon], {
+				opacity : data.opacity,
+				icon : icon
 			});
 			marker.addTo(map).on('click', data.onClick);
 			markers.push(marker);

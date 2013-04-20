@@ -17,3 +17,11 @@ body {
 div#map {
 	height: 400px;
 }
+
+.slider.slider-vertical {
+	height: 400px;
+}
+
+.slider-handle {
+	background-color: red;
+}

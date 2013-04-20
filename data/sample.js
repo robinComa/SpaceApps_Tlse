@@ -6,7 +6,7 @@
 			"img" : "http://www.whiterockscience.com/moritz/images/clegwin.jpg"
 		},
 		"style" : {
-			"color" : "red"
+			"color" : "green"
 		}
 	},
 	"geometries" : [{
