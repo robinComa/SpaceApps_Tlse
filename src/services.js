@@ -7,7 +7,7 @@ angular.module('i18nService', ['ngResource']).factory('I18n', function($resource
 /** Distant data Services */
 
 angular.module('dataService', ['ngResource']).factory('Data', function($resource){
-	return $resource('data/sample.json', {}, {
+	return $resource('data/sample.js', {}, {
 		query: {
 			method:'GET',
 			params:{},

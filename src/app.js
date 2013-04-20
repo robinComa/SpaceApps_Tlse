@@ -53,7 +53,11 @@ angular.module('SpaceAppsTlse', ['i18nService', 'i18nFilter', 'dataService'])
 		}).addTo(map);
 		
 		this.addMarker = function(data){
-			L.marker([data.coordinate.lat, data.coordinate.lon]).addTo(map).on('click', data.onClick);
+			var marker = L.marker([data.coordinate.lat, data.coordinate.lon], {
+				opacity : data.opacity
+			});
+			marker.addTo(map).on('click', data.onClick);
+			markers.push(marker);
 		};
 		
 		this.addPolyline = function(data){
@@ -61,7 +65,10 @@ angular.module('SpaceAppsTlse', ['i18nService', 'i18nFilter', 'dataService'])
 			for(var i in data.coordinates){
 				latlngs.push(new L.LatLng(data.coordinates[i].lat, data.coordinates[i].lon));
 			}
-			L.polyline(latlngs, {color: 'red'}).addTo(map).on('click', data.onClick);
+			L.polyline(latlngs, {
+				color: data.color,
+				opacity : data.opacity
+			}).addTo(map).on('click', data.onClick);
 		};
 		
 		this.addPolygon = function(data){
@@ -69,7 +76,21 @@ angular.module('SpaceAppsTlse', ['i18nService', 'i18nFilter', 'dataService'])
 			for(var i in data.coordinates){
 				latlngs.push(new L.LatLng(data.coordinates[i].lat, data.coordinates[i].lon));
 			}
-			L.polygon(latlngs, {color: 'green'}).addTo(map).on('click', data.onClick);
+			L.polygon(latlngs, {
+				color: data.color,
+				opacity : data.opacity
+			}).addTo(map).on('click', data.onClick);
+		};
+		
+		this.clearMap = function(){
+			for(var i in markers){
+				map.removeLayer(markers.splice(i, 1)[0]);
+			}
+			for(i in map._layers) {
+		        if(map._layers[i]._path != undefined) {
+		        	map.removeLayer(map._layers[i]);
+		        }
+		    }
 		};
 	}
 });
