@@ -84,8 +84,9 @@ angular.module('SpaceAppsTlse', ['i18nService', 'i18nFilter', 'dataService'])
 		
 		this.clearMap = function(){
 			for(var i in markers){
-				map.removeLayer(markers.splice(i, 1)[0]);
+				map.removeLayer(markers[i]);
 			}
+			markers = [];
 			for(i in map._layers) {
 		        if(map._layers[i]._path != undefined) {
 		        	map.removeLayer(map._layers[i]);
