@@ -47,8 +47,21 @@
     	<div class="span9">
    			 <div id="map"></div>
     	</div>
-    	<div class="span3">
-			<input type="text" id="timeline">
+    	<div class="span3" id="legend">
+    		<div class="row-fluid">
+    			<div class="span1">
+					<input type="text" id="timeline">
+    			</div>
+    			<div class="span11">
+    				<ul class="unstyled">
+						<li ng-repeat="type in types">
+							<span class="legend-header">{{type.unity.name}}</span>
+							<br>
+							<input type="checkbox"/><img ng-src="{{type.unity.legend}}"/>
+						</li>
+					</ul>
+    			</div>
+    		</div>
     	</div>
     </div>
     
@@ -72,7 +85,7 @@
 <script type="text/javascript" charset="utf-8" src="libs/leaflet/leaflet.js"></script>
 <script type="text/javascript" charset="utf-8" src="src/app.js"></script>
 <script type="text/javascript" charset="utf-8" src="src/filters.js"></script>
-<script type="text/javascript" charset="utf-8" src="src/controllers_scope_1.js"></script>
+<script type="text/javascript" charset="utf-8" src="src/controllers_scope_2.js"></script>
 <script type="text/javascript" charset="utf-8" src="src/services.js"></script>
 <script type="text/javascript" charset="utf-8" src="src/main.js"></script>
 </html>

@@ -1,5 +1,6 @@
 body {
 	padding-top: 60px;
+	font-family: consolas, sans-serif;
 	/* 60px to make the container go all the way to the bottom of the topbar */
 }
 
@@ -23,5 +24,16 @@ div#map {
 }
 
 .slider-handle {
-	background-color: red;
+	background-color: rgb(184, 204, 42);
+}
+
+div#legend{
+	background-color: rgb(73, 69, 65);
+	color : white;
+}
+
+span.legend-header{
+	height: 40px;
+	background-color: rgb(48, 45, 41);
+	padding : 5px;
 }

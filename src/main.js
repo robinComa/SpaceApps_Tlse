@@ -1,5 +1,7 @@
-function MainCtrl ($scope, $rootScope) {
+function MainCtrl ($scope, $rootScope, Type) {
 
+	$rootScope.types = Type.list();
+	
 	$rootScope.map = new $rootScope.Map({lat : 40, lon : 0});
 	$('#timeline').slider({
 		max : 0,

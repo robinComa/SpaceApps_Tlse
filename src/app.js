@@ -1,4 +1,4 @@
-angular.module('SpaceAppsTlse', ['i18nService', 'i18nFilter', 'dataService'])
+angular.module('SpaceAppsTlse', ['i18nService', 'i18nFilter', 'typeService', 'dataService'])
 	.config(['$routeProvider', function($routeProvider) {
 		$routeProvider.
 			when('/', {templateUrl: 'src/templates/home.html', controller: HomeCtrl}).
@@ -80,8 +80,8 @@ angular.module('SpaceAppsTlse', ['i18nService', 'i18nFilter', 'dataService'])
 		
 		this.addPolygon = function(data){
 			var latlngs = [];
-			for(var i in data.coordinates){
-				latlngs.push(new L.LatLng(data.coordinates[i].lat, data.coordinates[i].lon));
+			for(var i in data.points){
+				latlngs.push(new L.LatLng(data.points[i].coordinates.lat, data.points[i].coordinates.lon));
 			}
 			L.polygon(latlngs, {
 				color: data.color,
