@@ -1,0 +1,58 @@
+<div class="span6 offset3">
+	<h1>RESTful API</h1>
+	<h2>Get Data</h2>
+	<table class="table table-striped">
+		<tr>
+			<td>URL : </td>
+			<td>http://www.mygeopostcard.com/earthday/area</td>
+		</tr>
+		<tr>
+			<td>Http Method : </td>
+			<td>GET</td>
+		</tr>
+	</table>
+	
+	<h2>Create Data</h2>
+	<table class="table table-striped">
+		<tr>
+			<td>URL : </td>
+			<td>http://www.mygeopostcard.com/earthday/area</td>
+		</tr>
+		<tr>
+			<td>Http Method : </td>
+			<td>POST</td>
+		</tr>
+		<tr>
+			<td>Payload : </td>
+			<td>
+			<pre>
+{
+	author: "NASA",
+	description: "My Form Post",
+	endDate: 946684800000,
+	points: [{
+		coordinates:{
+			lat:34.9,
+			lon:-118.09
+		}//nb coordinates == 1 => Marker, nb coordinates > 2 => Polygon
+	}],
+	startDate: 631152000000,
+	type: "Air pollution",
+	value: "600"
+}</pre>
+			</td>
+		</tr>
+	</table>
+	
+	<h2>Delete Data</h2>
+	<table class="table table-striped">
+		<tr>
+			<td>URL : </td>
+			<td>http://www.mygeopostcard.com/earthday/area/:id</td>
+		</tr>
+		<tr>
+			<td>Http Method : </td>
+			<td>DELETE</td>
+		</tr>
+	</table>
+</div>

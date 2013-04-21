@@ -13,7 +13,7 @@ angular.module('typeService', ['ngResource']).factory('Type', function($resource
 /** Distant data Services */
 
 var serviceUrl = 'http://www.mygeopostcard.com/earthday/:resource';
-var serviceUrl = 'data/struct_sample_scope_4.js';
+//var serviceUrl = 'data/struct_sample_scope_4.js';
 
 angular.module('dataService', ['ngResource']).factory('Data', function($resource){
 	return $resource(serviceUrl, {resource : 'area'}, {

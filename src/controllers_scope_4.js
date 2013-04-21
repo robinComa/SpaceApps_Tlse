@@ -1,22 +1,15 @@
 function HomeCtrl($rootScope, $scope, Data){
 
 	$scope.newArea = {
-			author: "NASA",
-			description: "My Form Post",
-			endDate: 315532800000,
+			author: null,
+			description: null,
+			endDate: null,
 			points: [
-			         {coordinates:{lat:0.0, lon:0.0}},
-			         {coordinates:{lat:0.0, lon:0.0}},
-			         {coordinates:{lat:0.0, lon:0.0}},
-			         {coordinates:{lat:0.0, lon:0.0}},
-			         {coordinates:{lat:0.0, lon:0.0}},
-			         {coordinates:{lat:0.0, lon:0.0}},
-			         {coordinates:{lat:0.0, lon:0.0}},
-			         {coordinates:{lat:0.0, lon:0.0}}
+			         {coordinates:{lat:null, lon:null}}
          ],
          startDate: 0,
-         type: "Co2 pollution",
-         value: 80
+         type: null,
+         value: null
 	};
 
 	$scope.submitNewArea = function(){
@@ -81,7 +74,12 @@ function HomeCtrl($rootScope, $scope, Data){
 
 
 				if(isMarker){
-
+					$rootScope.map.addMarker({
+						point : area.points[0],
+						color : $rootScope.types[area.type].color,
+						opacity : dataToOpacity(area.type, area.value),
+						infoBulle : '<h3>'+area.type+' ('+area.value+')</h3><h5>'+(new Date(area.startDate)).getFullYear()+' / '+(new Date(area.endDate)).getFullYear()+'</h5>'+'<p><strong>'+area.author+'</strong> : '+area.description+'</p>'
+					});
 				}else if(isPolyline){
 
 				}else if(isPolygon){
@@ -114,6 +112,13 @@ function HomeCtrl($rootScope, $scope, Data){
 			$scope.newArea.endDate = e.date.getTime();
 		});
 	});
+	
+	setTimeout(function(){
+		$('.tooltipLegend').tooltip({
+			trigger : 'hover',
+			placement : 'top'
+		});
+	}, 500);
 
 	$('#timeline').slider({
 		max : 0,
@@ -133,4 +138,12 @@ function HomeCtrl($rootScope, $scope, Data){
 	setTimeout(function(){
 		$scope.fillMap($rootScope.data);
 	}, 500);
+}
+
+function AboutCtrl($rootScope, $scope){
+	
+}
+
+function ApiCtrl(){
+	
 }

@@ -29,8 +29,8 @@
 
         <ul class="nav">
           <li><a href="#"><span class="home"></span> {{'home' | i18n}}</a></li>
-          <li><a href="#"><span class="about"></span>About</a></li>
-          <li><a href="#"><span class="submit"></span>Submit</a></li>
+          <li><a href="#/about"><span class="about"></span>About</a></li>
+          <li><a ng-click="showSubmitNewAreaForm()" href="/#/"><span class="submit"></span>Submit</a></li>
        </ul>
 
     </div>
@@ -57,8 +57,8 @@
                   <p>Earth Day Challenge From Nasa Space App Challenge 2013</p>
 
                   <ul class="inline" id="footer-nav">
-                    <li><a href="#">Home</a></li>&bull;
-                    <li><a href="#">About</a></li>&bull;
+                    <li><a href="#">Home</a>&bull;</li>
+                    <li><a href="#/about">About</a>&bull;</li>&bull;
                     <li><a href="#">Legal terms</a></li>&bull;
                     <li><a href="http://opensource.org/licenses/MIT" target="_blank">MIT License</a></li>
                   </ul>

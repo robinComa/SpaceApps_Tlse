@@ -30,6 +30,7 @@
 								<span class="legend-header">{{type.unity.name}}</span>
 								<br>
 								<img ng-src="{{type.unity.legend}}"/>
+								<i class="icon-info-sign icon-white tooltipLegend" data-toggle="tooltip" title="Min : {{type.unity.range.min}} / Max : {{type.unity.range.max}}"></i>
 							</li>
 						</ul>
 	    			</div>
@@ -38,11 +39,9 @@
     	</div>
     </div>
 	<div class="row-fluid">
-		<div class="span4 offset4" ng-hide="showSubmitNewAreaForm">
-			<button class="btn btn-primary input-block-level" ng-click="showSubmitNewAreaForm=true"><i class="icon-plus icon-white"></i> {{'form.new.area.title' | i18n}}</button>
-		</div>
-		<div class="span6 offset3" ng-show="showSubmitNewAreaForm" ng-init="showSubmitNewAreaForm=false">
+		<div class="span6 offset3" ng-show="showSubmitNewAreaFormStatus">
 			<h1>{{'form.new.area.title' | i18n}}</h1>
+			<a href="/#/api">RESTful API Documentation</a>
 			<form ng-submit="submitNewArea()">
 				<input class="input-block-level" type="text" ng-model="newArea.author" required="required" placeholder="{{'form.new.area.author' | i18n}}"/>
 				<textarea class="input-block-level" ng-model="newArea.description" required="required" placeholder="{{'form.new.area.description' | i18n}}"></textarea>
@@ -68,13 +67,22 @@
 				<div ng-repeat="point in newArea.points">
 					<input class="span5" type="text" ng-model="point.coordinates.lat" required="required" placeholder="Lat"/>
 					<input class="span5" type="text" ng-model="point.coordinates.lon" required="required" placeholder="Lon"/>
-					<button type="button" class="btn btn-success span2" ng-click="newAreaAddCoordinates()"><i class="icon-plus icon-white"></i></button>
 				</div>
+				<button type="button" class="btn btn-success span2" ng-click="newAreaAddCoordinates()"><i class="icon-plus icon-white"></i></button>
+				<br>
 				<hr>
 				
 				<button type="submit" class="btn btn-success input-block-level btn-large"><i class="icon-ok icon-white"></i>  {{'form.new.area.submit' | i18n}}</button>
 			</form>
 		</div>
 	</div>    
-
+	<div class="row-fluid">
+		<div class="span6 offset3">
+			<br>
+			<p><strong>MY.EARTH</strong> is a community and environmental  app. It creates a visualization of pollution levels changing over time. It aims at raising awareness regarding pollution issues around the globe, both locally and internationaly.
+			<br>
+			<br>
+			It shows how space data can help on earth, looking at pollution levels from a global point of view. It gathers satellite pictures and environmental datas from NASA, elected organisations internationally, as well as city admninistrators, national organisation and individual data collectors locally. The visualization enhances pollution issues and improvement over time as it spans from 1970 to nowadays. Beginners and specialists can use this app to get accurate data or as an educational tool on environmental matters.</p>
+		</div>
+	</div>
 </div>

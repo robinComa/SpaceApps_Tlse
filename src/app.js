@@ -2,6 +2,8 @@ angular.module('SpaceAppsTlse', ['i18nService', 'i18nFilter', 'typeService', 'da
 	.config(['$routeProvider', function($routeProvider) {
 		$routeProvider.
 			when('/', {templateUrl: 'src/templates/home.html', controller: HomeCtrl}).
+			when('/api', {templateUrl: 'src/templates/api.html', controller: ApiCtrl}).
+			when('/about', {templateUrl: 'src/templates/about.html', controller: AboutCtrl}).
 			otherwise({redirectTo: '/'});
 }]).config(['$httpProvider', function ($httpProvider) {
 	// For CORS XHR Requests
@@ -59,10 +61,14 @@ angular.module('SpaceAppsTlse', ['i18nService', 'i18nFilter', 'typeService', 'da
 			    iconAnchor:   [2, 40],
 			    shadowAnchor:   [2, 40]
 			});
-			var marker = L.marker([data.coordinates.lat, data.coordinates.lon], {
-				opacity : data.opacity,
+			var marker = L.marker([data.point.coordinates.lat, data.point.coordinates.lon], {
 				icon : icon
 			});
+			var circle = L.circle([data.point.coordinates.lat, data.point.coordinates.lon], 1000, {
+				color : data.color,
+				opacity : data.opacity
+			}).addTo(map);
+			circle.addTo(map);
 			marker.addTo(map).bindPopup(data.infoBulle?data.infoBulle:'');
 			markers.push(marker);
 		};
@@ -79,7 +85,18 @@ angular.module('SpaceAppsTlse', ['i18nService', 'i18nFilter', 'typeService', 'da
 		};
 		
 		this.addPolygon = function(data){
+			//FIXME
+			var size = 70;
+			var media = '';
 			var latlngs = [];
+			if(data.infoBulle.match('Ozone pollution')){
+				media += '<img height="'+size+'" width="'+size+'" src="img/media_fake/19790917_lrg1.png"/>';
+				media += '<img height="'+size+'" width="'+size+'" src="img/media_fake/19891007_lrg.png"/>';
+				media += '<img height="'+size+'" width="'+size+'" src="img/media_fake/20061009_lrg2.png"/>';
+				media += '<img height="'+size+'" width="'+size+'" src="img/media_fake/20101001_lrg3.png"/>';
+			}else if(data.infoBulle.match('Water pollution')){
+				media += '<a target="_blank" href="http://www.grinningplanet.com/2008/01-08/water-pollution-solutions-article.htm">Link to solutions documentation</a>';
+			}
 			for(var i in data.points){
 				latlngs.push(new L.LatLng(data.points[i].coordinates.lat, data.points[i].coordinates.lon));
 			}
@@ -87,7 +104,7 @@ angular.module('SpaceAppsTlse', ['i18nService', 'i18nFilter', 'typeService', 'da
 				color: data.color,
 				opacity : data.opacity/4,
 				fillOpacity : data.opacity
-			}).addTo(map).bindPopup(data.infoBulle?data.infoBulle:'');
+			}).addTo(map).bindPopup(data.infoBulle?data.infoBulle+media:'');
 		};
 		
 		this.clearMap = function(){
