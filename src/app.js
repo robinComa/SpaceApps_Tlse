@@ -56,8 +56,8 @@ angular.module('SpaceAppsTlse', ['i18nService', 'i18nFilter', 'typeService', 'da
 		
 		this.addMarker = function(data){
 			var icon = L.icon({
-			    iconUrl: '/img/marker/grey.png',
-			    shadowUrl: '/img/marker/shadow.png',
+			    iconUrl: 'img/marker/grey.png',
+			    shadowUrl: 'img/marker/shadow.png',
 			    iconAnchor:   [2, 40],
 			    shadowAnchor:   [2, 40]
 			});
