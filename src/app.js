@@ -63,7 +63,7 @@ angular.module('SpaceAppsTlse', ['i18nService', 'i18nFilter', 'typeService', 'da
 				opacity : data.opacity,
 				icon : icon
 			});
-			marker.addTo(map).on('click', data.onClick);
+			marker.addTo(map).bindPopup(data.infoBulle?data.infoBulle:'');
 			markers.push(marker);
 		};
 		
@@ -75,7 +75,7 @@ angular.module('SpaceAppsTlse', ['i18nService', 'i18nFilter', 'typeService', 'da
 			L.polyline(latlngs, {
 				color: data.color,
 				opacity : data.opacity
-			}).addTo(map).on('click', data.onClick);
+			}).addTo(map).bindPopup(data.infoBulle?data.infoBulle:'');
 		};
 		
 		this.addPolygon = function(data){
@@ -87,7 +87,7 @@ angular.module('SpaceAppsTlse', ['i18nService', 'i18nFilter', 'typeService', 'da
 				color: data.color,
 				opacity : data.opacity/4,
 				fillOpacity : data.opacity
-			}).addTo(map).on('click', data.onClick);
+			}).addTo(map).bindPopup(data.infoBulle?data.infoBulle:'');
 		};
 		
 		this.clearMap = function(){

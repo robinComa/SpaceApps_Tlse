@@ -7,5 +7,12 @@
 	"footer" : "The footer",
 	"legend.timeline" : "SEARCH BY YEAR",
 	"legend.polution.type" : "SERACH BY POLLUTION TYPE",
-	"now" : "Now"
+	"now" : "Now",
+	"form.new.area.title" : "Submit an area",
+	"form.new.area.author" : "Author",
+	"form.new.area.description" : "Description",
+	"form.new.area.startDate" : "Start date",
+	"form.new.area.endDate" : "End Date",
+	"form.new.area.value" : "Value",
+	"form.new.area.submit" : "Submit"
 }
