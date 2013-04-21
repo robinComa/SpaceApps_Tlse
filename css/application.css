@@ -1,19 +1,17 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body {
-	padding-top: 60px;
-	font-family: consolas, sans-serif;
-	/* 60px to make the container go all the way to the bottom of the topbar */
+	/*font-family: consolas <-- si vous avez cette font et  les droits…   , sans-serif;    */
+	font-family: 'Inconsolata', sans-serif;
+	background: #eee;
+	font-size:  18px;
 }
 
-.navbar-fixed-top {
-	position: fixed;
-	!
-	important
-}
 
-.navbar-inner {
-	margin-left: 20px;
-	margin-right: 20px;
-}
 
 div#map {
 	height: 500px;
@@ -36,7 +34,7 @@ div#legend{
 }
 
 .legend-header{
-	font-size: 11px;
+	font-size: 16px;
 	height: 40px;
 	background-color: rgb(48, 45, 41);
 	padding : 5px;
@@ -47,3 +45,103 @@ div#legend-type{
 	overflow-y: scroll;
 	overflow-x: hidden;
 }
+header {
+	margin-bottom: 1em;
+}
+.logo {
+	background-color: rgb(48, 45, 41);
+	padding:  4em 10px 10px 10px;
+}
+
+.logo  h1, .logo  img {
+	float: left;
+	font-size: 2.6em;
+}
+
+.logo img {
+	width: 110px;
+	height: 115px;
+}
+
+.logo h1{
+	line-height: 115px;
+	margin-left: 10px;
+	font-weight: 200;
+}
+
+.logo  a{
+	text-decoration: none;
+	color: white;
+}
+
+.nav span {
+	width: 68px;
+	height: 61px;
+	display: block;
+	line-height: 115px;
+	margin-bottom:  10px;
+	position: relative;
+}
+
+.nav li {
+	font-size: 1.6em;
+	color: rgb(48, 45, 41);
+	text-transform: uppercase;
+	padding-top: 116px;
+	margin-left: 2em;
+}
+.navbar .nav li >a {
+	padding: 10px 15px 0px 10px;
+}
+
+.home {
+	background: url('../img/menu/menu_home.png') 0 0 no-repeat;
+	left: -5px;
+}
+
+.about {
+	background: url('../img/menu/menu_about.png') 0 0 no-repeat;
+	left: 6px;
+}
+
+.submit {
+	background: url('../img/menu/menu_submit.png') 0 0 no-repeat;
+	left: 8px;
+}
+
+footer {
+	margin-top: 3em;
+}
+
+footer .logo{
+	padding-top: 30px;
+}
+
+.footer-desc {
+	padding-top: 25px;
+}
+
+.footer-desc a {
+	text-decoration: none;
+}
+.footer-desc :not(:first-child){
+	text-transform: uppercase;
+	font-size: 20px;
+}
+
+#footer-nav >li {
+	padding: 0;
+	padding-right:  10px;
+}
+
+.inline a {
+	color: rgb(48, 45, 41);
+}
+
+.inline a:hover {
+	color: #777;
+}
+
+
+
+

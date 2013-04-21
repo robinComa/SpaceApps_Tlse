@@ -2,9 +2,10 @@
 <html lang="en" ng-app="SpaceAppsTlse">
 <head>
 	<title>Space Apps Tlse</title>
-	    
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    
+
+    <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet'>
     <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="libs/bootstrap/css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="libs/slider/css/slider.css">
@@ -13,45 +14,82 @@
 </head>
 
 <body ng-controller="MainCtrl">
+ <header>
+  <div class="container">
+    <div class="row">
 
-	<div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <ul class="nav">
-            <li><a href="#"><i class="icon-home"></i> {{'home' | i18n}}</a></li>
-            <li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-					<i class="icon-flag"></i> {{'langage' | i18n}}<b class="caret"></b>
-				</a>
-				<ul class="dropdown-menu">
-				  <li><a href="" ng-click="i18n.changeLanguage('en')">{{'english' | i18n}}</a></li>
-				  <li><a href="" ng-click="i18n.changeLanguage('fr')">{{'french' | i18n}}</a></li>
-				</ul>
-			</li>
-          </ul>
-          <div class="nav-collapse collapse">
-            <ul class="nav pull-right">
-            	<li><a href="#"><i class="icon-lock"></i>  {{'deconnection' | i18n}}</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
+      <div class="span4 logo clearfix">
+        <a href="/">
+          <img src="img/menu/header_logo.png" alt="logo MY.EART">
+          <h1>MY<sub>&bull;</sub>EARTH</h1>
+        </a>
+      </div>
+      <div class="navbar span8">
+
+        <ul class="nav">
+          <li><a href="#"><span class="home"></span> {{'home' | i18n}}</a></li>
+          <li><a href="#"><span class="about"></span>About</a></li>
+          <li><a href="#"><span class="submit"></span>Submit</a></li>
+
+        </ul>
+
+             <!--
+<div class="navbar-inner">
+
+             <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="icon-flag"></i> {{'langage' | i18n}}<b class="caret"></b>
+              </a>
+                  <ul class="dropdown-menu">
+                    <li><a href="" ng-click="i18n.changeLanguage('en')">{{'english' | i18n}}</a></li>
+                    <li><a href="" ng-click="i18n.changeLanguage('fr')">{{'french' | i18n}}</a></li>
+                  </ul>
+            </li>
+                </ul>
+                    <div class="nav-collapse collapse">
+                      <ul class="nav pull-right">
+                        <li><a href="#"><i class="icon-lock"></i>  {{'deconnection' | i18n}}</a></li>
+                      </ul>
+                    </div>
+                </div>
+              </div> - -->
+
+            </div>
+          </div>  <!-- end container -->
+        </header>
+
+	<div class="container row-fluid" ng-view></div>
+
+	<footer>
+       <div class="container" id="footer">
+        <div class="row">
+
+          <div class="span4 logo clearfix">
+            <a href="/">
+              <img src="img/menu/header_logo.png" alt="logo MY.EART">
+              <h1>MY<sub>&bull;</sub>EARTH</h1>
+            </a>
+          </div>  <!-- end .logo -->
+          <div class="span2 nasa">
+            <strong>with</strong><a href="http://www.nasa.gov" target="_blank"><img src="img/menu/nasa.png" alt="nasa logo"></a>
+          </div>
+          <div class="span6 footer-desc">
+                  <p class="lead">by Alexia Delas, Aditya Geria, Nicolas Noullet, Robin Coma, Stéphane Coué</p>
+                  <p>Earth Day Challenge From Nasa Space App Challenge 2013</p>
+
+                  <ul class="inline" id="footer-nav">
+                    <li><a href="#">Home</a></li>&bull;
+                    <li><a href="#">About</a></li>&bull;
+                    <li><a href="#">Legal terms</a></li>&bull;
+                    <li><a href="http://opensource.org/licenses/MIT" target="_blank">MIT License</a></li>
+                  </ul>
+
+          </div>
+
         </div>
       </div>
-    </div>
-        
-	<div class="container row-fluid" ng-view></div>
-	
-	<div id="footer">
-		<div class="container">
-			<hr>
-			<p class="muted credit text-center">{{'footer' | i18n}}</p>
-		</div>
-	</div>
-	
+	</footer>
+
 </body>
 
 <script type="text/javascript" charset="utf-8" src="libs/angular.min.js"></script>
