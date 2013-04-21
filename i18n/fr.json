@@ -7,5 +7,12 @@
 	"footer" : "Le pied de page",
 	"legend.timeline" : "RECHERCHE PAR ANNEE",
 	"legend.polution.type" : "RECHERCHE PAR TYPE DE POLLUTION",
-	"now" : "Maintenant"
+	"now" : "Maintenant",
+	"form.new.area.title" : "Soumettre une zone",
+	"form.new.area.author" : "Auteur",
+	"form.new.area.description" : "Description",
+	"form.new.area.startDate" : "Date de début",
+	"form.new.area.endDate" : "Date de fin",
+	"form.new.area.value" : "Valeur",
+	"form.new.area.submit" : "Soumettre"
 }
